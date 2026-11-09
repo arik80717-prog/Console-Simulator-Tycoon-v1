@@ -3,7 +3,7 @@ name: Build Android APK
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch: # Позволяет запускать сборку вручную кнопкой
+  workflow_dispatch:
 
 jobs:
   build:
@@ -26,6 +26,11 @@ jobs:
 
     - name: Install dependencies
       run: npm install
+
+    - name: Create www folder and copy files
+      run: |
+        mkdir -p www
+        cp index.html sw.js manifest.webmanifest *.png www/ 2>/dev/null || true
 
     - name: Add Android platform
       run: npx cap add android
