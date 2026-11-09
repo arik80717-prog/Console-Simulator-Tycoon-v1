@@ -1,0 +1,8 @@
+{
+  "appId": "com.garage.consoles",
+  "appName": "Гараж Консолей",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#eceff6"
+  }
+}
